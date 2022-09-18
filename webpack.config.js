@@ -27,7 +27,17 @@ module.exports = {
       {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
-      }
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        exclude: /(node_modules|src)/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        },
+      },
     ]
   },
 
