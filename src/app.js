@@ -1,4 +1,4 @@
-import "./css/main.scss";
+import "./sass/main.scss";
 import Photos from './js/Photos'
 
 // const photos = new Photos();
