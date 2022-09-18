@@ -4,8 +4,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+
+module.exports = (env, argv) => {
+  console.log(argv.mode)
+  const isProduction = argv.mode === 'production';
+  console.log(isProduction)
+  
+  return {
   entry: './src/app.js',
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
@@ -22,7 +29,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-         MiniCssExtractPlugin.loader,
+          (isProduction) ? iniCssExtractPlugin.loader : 'style-loader',
          "css-loader",
          "sass-loader",
         ]
@@ -30,25 +37,15 @@ module.exports = {
       {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
-      },
-      // {
-      //   test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      //   exclude: /(node_modules|src)/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: '[path][name].[ext]',
-      //     },
-      //   },
-      // },
+      }
     ]
   },
 
+  
   optimization: {
-    minimize: true,
-    minimizer: [
-      new CssMinimizerPlugin(),
-    ],
+    splitChunks:{
+      chunks: (isProduction) ? 'all' : 'async'
+    }
   },
 
   plugins: [
@@ -74,4 +71,4 @@ module.exports = {
       ],
     }),
   ]
-}
+}};
