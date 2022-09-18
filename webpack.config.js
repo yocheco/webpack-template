@@ -13,38 +13,37 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
+         MiniCssExtractPlugin.loader,
+         "css-loader",
+         "sass-loader",
         ]
       },
       {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
-      },
-      {
-        test: /\.(jpg|png|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "img",
-              publicPath: "img",
-            }
-            
-          }
-        ],
-      },
+      }
     ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.hbs'
+      template: './src/index.hbs',
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }      
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
