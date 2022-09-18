@@ -8,7 +8,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = (env, argv) => {
   console.log(argv.mode)
   const isProduction = argv.mode === 'production';
-  console.log(isProduction)
   
   return {
   entry: './src/app.js',
@@ -29,7 +28,7 @@ module.exports = (env, argv) => {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (isProduction) ? iniCssExtractPlugin.loader : 'style-loader',
+          (isProduction) ? MiniCssExtractPlugin.loader : 'style-loader',
          "css-loader",
          "sass-loader",
         ]
