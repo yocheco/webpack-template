@@ -1,13 +1,2 @@
 @import 'imports';
-body{
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-h1{
-  font-family: 'IntegralCF';
-  color: blue;
-  background-image: url('../assets/img/logo.png');
-}
-h2{
-  font-family: 'Satoshi';
-}
+@import 'web';
