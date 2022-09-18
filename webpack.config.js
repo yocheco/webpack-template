@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -12,10 +13,12 @@ module.exports = {
 
   module: {
     rules: [
+      // @Babel
       {
         test: /\.js$/,
         loader: 'babel-loader'
       },
+      // Css
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -28,17 +31,24 @@ module.exports = {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
       },
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        exclude: /(node_modules|src)/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-          },
-        },
-      },
+      // {
+      //   test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+      //   exclude: /(node_modules|src)/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[path][name].[ext]',
+      //     },
+      //   },
+      // },
     ]
+  },
+
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
   },
 
   plugins: [
