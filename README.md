@@ -19,6 +19,37 @@ npm run dev
 npm run build
 ```
 
+## Css
+
+styles
+├── settings
+│       ├── _colors.scss
+│       └── _typography.scss
+├── tools
+│       └── _mixins.scss
+├── generic
+│       ├── _normalize.scss
+│       └── _box-sizing.scss
+├── elements
+│       ├── _headings.scss
+│       └── _links.scss
+├── objects
+│       ├── _container.scss
+│       └── _ui-list.scss
+├── atoms
+│       ├── _button.scss
+│       ├── _image.scss
+│       └── _pill.scss
+├── molecules
+│       ├── _card.scss
+│       └── _form.scss
+├── organisms
+│       ├── _gallery.scss
+│       └── _header.scss
+├── utilities
+│       ├── _typography.scss 
+│       └── _error.scss
+└── index.scss
 
 
 ## Codigos git
