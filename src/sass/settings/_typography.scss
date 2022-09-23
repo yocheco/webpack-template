@@ -1,0 +1,28 @@
+$font-family: "Plus Jakarta Sans, sans-serif";
+$font-family-titles: "IntegralCF";
+$font-family-special: "Satoshi";
+
+// Body sizes
+$b500-bold: 700 1.31rem / 1.33 #{$font-family};
+$b500-regular: 1.31rem / 1.33 #{$font-family};
+$b400-bold: 700 1.125rem / 1.55 #{$font-family};
+$b400-regular: 1.125rem / 1.55 #{$font-family};
+$b300-bold: 700 1rem / 1.5 #{$font-family};
+$b300-regular: 1rem / 1.5 #{$font-family};
+$b200-bold: 700 0.875rem / 1.42 #{$font-family};
+$b200-regular: 0.875rem / 1.42 #{$font-family};
+
+// Desktop title sizes
+$xl-h500: 5rem / 1.05 #{$font-family-titles};
+$xl-h400: 4rem / 1.05 #{$font-family-titles};
+$xl-h300: 3.18rem / 1.17 #{$font-family-titles};
+$xl-h200: 2rem / 1.25 #{$font-family-titles};
+$xl-h100: 1.5rem / 1.33 #{$font-family-titles};
+
+
+// Mobile title sizes
+$sm-h500: 3.18rem / 1.01 #{$font-family-titles};
+$sm-h400: 2.62rem / 1.14 #{$font-family-titles};
+$sm-h300: 2rem / 1.25 #{$font-family-titles};
+$sm-h200: 1.5rem / 1.33 #{$font-family-titles};
+$sm-h100: 1.31rem / 1.33 #{$font-family-titles};

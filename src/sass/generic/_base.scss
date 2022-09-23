@@ -1,0 +1,29 @@
+
+@use "../settings/colors";
+@use "../settings/typography";
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  color: colors.$text;
+  font: typography.$b500-regular;
+  font-family: #{typography.$font-family};
+}
+
+a {
+  color: colors.$text-primary;
+}
+
+:focus-visible {
+  outline: 2px solid colors.$brand;
+  outline-offset: 0.2rem;
+}
+
+::selection {
+  background: colors.$select-bg;
+  color: colors.$select-text;
+}
