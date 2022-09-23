@@ -21,6 +21,7 @@ npm run build
 
 ## Css
 
+```
 styles
 ├── settings
 │       ├── _colors.scss
@@ -50,6 +51,7 @@ styles
 │       ├── _typography.scss 
 │       └── _error.scss
 └── index.scss
+```
 
 
 ## Codigos git
