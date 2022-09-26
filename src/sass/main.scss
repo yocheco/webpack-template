@@ -4,5 +4,8 @@
 @use "./generic/fonts";
 @use "./generic/base";
 
+// Theme
+@use "./theme";
+
 // Objects
-@use "./objects/index";
+@use "./objects";

@@ -7,7 +7,8 @@ html {
 }
 
 body {
-  color: colors.$text;
+  background: var(--background-color);
+  color: var(--text-color);
   font-family: #{typography.$font-family};
   font-size: typography.$fs-body;
   line-height: 1.8;
