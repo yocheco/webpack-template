@@ -3,6 +3,7 @@
 
 @font-face {
   font-family: "IntegralCF";
+  font-display: swap;
   src:  url('./fonts/IntegralCF-DemiBold.eot'); /* IE9 Compat Modes */
   src:  url('./fonts/IntegralCF-DemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
         url('./fonts/IntegralCF-DemiBold.woff') format('woff'),
@@ -12,6 +13,7 @@
 
 @font-face {
   font-family: "Satoshi";
+  font-display: swap;
   src:  url('./fonts/Satoshi-Regular.eot'); /* IE9 Compat Modes */
   src:  url('./fonts/Satoshi-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
         url('./fonts/Satoshi-Regular.woff') format('woff'),
