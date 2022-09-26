@@ -1,3 +1,8 @@
-@import "./generic/reset";
-@import "./generic/fonts";
-@import "./generic/base";
+// Generic
+// @use "./generic/normalize";
+@use "./generic/reset";
+@use "./generic/fonts";
+@use "./generic/base";
+
+// Objects
+@use "./objects/index";

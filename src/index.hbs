@@ -8,16 +8,72 @@
   <title>Document</title>
 </head>
 <body>
+
+  {{!-- [img] --}}
   <section>
-    <div class="container_web">
-      {{!-- logo --}}
+    <div class="container">
       {{>partials/logo}}
-      <h1>hola</h1>
-      <h2>hola</h2>
+      <hr>
+    </div>
+  </section>
+
+  {{!-- [H] --}}
+  <section class="section">
+    <div class="container">
+      <h1>Title h1</h1>
+      <h2>Title h2</h2>
+      <h3>Title h3</h3>
+      <hr>
+    </div>
+  </section>
+
+  {{!-- Text --}}
+  <section class="section">
+    <div class="container">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tenetur, commodi consectetur temporibus neque inventore voluptates dolorum rem molestias, nesciunt dolores ut eius minus corporis ipsa cumque necessitatibus molestiae.
       </p>
+      <hr>
+    </div>
+  </section>
+
+  {{!-- Form --}}
+  <section class="section">
+    <div class="container">
+      <input type="text" value="im a text">
+      <input type="password" value="im a password">
+      <input type="search" value="im a search">
+      <input type="tel" value="im a tel">
+      <input type="time" value="im a time">
+      <input type="url" value="im a url">
+      <input type="week" value="im a week">
+      <input type="date" >
+      <input type="color">
+      <input type="checkbox">
+      <input type="radio">
+      <input type="range">
+      <input type="reset">
+      <input type="submit">
+      <textarea name=""></textarea>
+      <hr>
+    </div>
+  </section>
+
+  {{!-- Buttoms --}}
+  <section class="section">
+    <div class="container">
+      <a href="#">Link</a>
+      <button>Buttom</button>
+      <hr>
+    </div>
+  </section>
+
+  {{!-- Icons --}}
+  <section class="section">
+    <div class="container">
       <i class="fa-brands fa-square-behance"></i>
+      <i class="fa-brands fa-github"></i>
+      <i class="fa-brands fa-docker"></i>
     </div>
   </section>
 </body>

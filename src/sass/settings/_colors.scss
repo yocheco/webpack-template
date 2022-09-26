@@ -1,8 +1,10 @@
 $_primary-blue: #3c55ff;
+$_primary-blue-hover: #2538b4;
 $_primary-gray: #787676;
 $_primary-grayLight: #b1b1b1;
 $_primary-grayLighter: #efefef;
 $_primary-white: #fff;
+$_primary-black: #000;
 $_secondary-violet: #55164f;
 
 $_hover-blue: rgb(60 85 255 / 70%);
@@ -11,8 +13,12 @@ $_error: #f83d32;
 
 // Brand
 $brand: $_primary-blue;
+$primary-color: $_primary-blue;
+$primary-hover-color: $_primary-blue-hover;
+
 // Background
 $bg-primary: $_primary-blue;
+
 // Text
 $text: $_primary-gray;
 $text-primary: $_primary-blue;
