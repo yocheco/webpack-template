@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
-
 module.exports = (env, argv) => {
   console.log(argv.mode)
   const isProduction = argv.mode === 'production';
@@ -16,15 +15,14 @@ module.exports = (env, argv) => {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
   },
-
   module: {
     rules: [
-      // @Babel
+      // [@Babel]
       {
         test: /\.js$/,
         loader: 'babel-loader'
       },
-      // Css
+      // [Css]
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -33,21 +31,20 @@ module.exports = (env, argv) => {
          "sass-loader",
         ]
       },
+      // [Handlebars]
       {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
       }
     ]
   },
-
-  
   optimization: {
     splitChunks:{
       chunks: (isProduction) ? 'all' : 'async'
     }
   },
-
   plugins: [
+    // [Html pages]
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.hbs',
@@ -61,9 +58,11 @@ module.exports = (env, argv) => {
         useShortDoctype: true
       }      
     }),
+    // [css]
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
     }),
+    // [Assetes]
     new CopyPlugin({
       patterns: [
         { from: "./src/assets", to: "./assets" },
