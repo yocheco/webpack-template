@@ -1,50 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const CopyPlugin = require('copy-webpack-plugin');
 const {PurgeCSSPlugin} = require('purgecss-webpack-plugin');
 
-module.exports = (env, argv) => {
-  console.log(argv.mode)
-  const isProduction = argv.mode === 'production';
-  
-  return {
+module.exports = {
   entry: './src/app.js',
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
-  },
-  module: {
-    rules: [
-      // [@Babel]
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      // [Css]
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          // (isProduction) ? MiniCssExtractPlugin.loader : 'style-loader',
-          MiniCssExtractPlugin.loader,
-         "css-loader",
-         "sass-loader",
-        ]
-      },
-      // [Handlebars]
-      {
-        test: /\.hbs$/,
-        use: ["handlebars-loader"]
-      },
-    ]
-  },
-  optimization: {
-    splitChunks:{
-      chunks: (isProduction) ? 'all' : 'async'
-    }
+    clean: true,
   },
   plugins: [
     // [Html pages]
@@ -61,10 +26,7 @@ module.exports = (env, argv) => {
         useShortDoctype: true
       }      
     }),
-    // [css]
-    new MiniCssExtractPlugin({
-      filename: 'css/main.css',
-    }),
+    // [Clean css]
     new PurgeCSSPlugin({
       paths: ["./src/index.hbs"],
       safelist: { standard: [/^dark/] },
@@ -77,5 +39,24 @@ module.exports = (env, argv) => {
         { from: "./src/assets", to: "./assets" },
       ],
     }),
-  ]
-}};
+  ],
+  module: {
+    rules: [
+      // [Handlebars]
+      {
+        test: /\.hbs$/,
+        use: ["handlebars-loader"]
+      },
+      // [@Babel]
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
+};

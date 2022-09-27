@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production rimraf dist && webpack --mode=production",
-    "dev": "webpack serve --mode=development"
+    "build": "NODE_ENV=production rimraf dist && webpack --config webpack.prod.js",
+    "dev": "webpack serve --open --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,7 @@
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0"
+    "webpack-dev-server": "^4.11.0",
+    "webpack-merge": "^5.8.0"
   }
 }
