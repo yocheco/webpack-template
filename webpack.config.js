@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
+const {PurgeCSSPlugin} = require('purgecss-webpack-plugin');
 
 module.exports = (env, argv) => {
   console.log(argv.mode)
@@ -20,13 +21,15 @@ module.exports = (env, argv) => {
       // [@Babel]
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader'
       },
       // [Css]
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (isProduction) ? MiniCssExtractPlugin.loader : 'style-loader',
+          // (isProduction) ? MiniCssExtractPlugin.loader : 'style-loader',
+          MiniCssExtractPlugin.loader,
          "css-loader",
          "sass-loader",
         ]
@@ -35,12 +38,12 @@ module.exports = (env, argv) => {
       {
         test: /\.hbs$/,
         use: ["handlebars-loader"]
-      }
+      },
     ]
   },
   optimization: {
     splitChunks:{
-      chunks: (isProduction) ? 'all' : 'async'
+      chunks: (!isProduction) ? 'all' : 'async'
     }
   },
   plugins: [
@@ -61,6 +64,12 @@ module.exports = (env, argv) => {
     // [css]
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
+    }),
+    new PurgeCSSPlugin({
+      paths: ["./src/index.hbs"],
+      safelist: { standard: [/^dark/] },
+      variables: true,
+      keyframes: true
     }),
     // [Assetes]
     new CopyPlugin({
