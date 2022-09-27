@@ -1,4 +1,7 @@
 # Webpack-Template
+<a href="https://github.com/yocheco/webpack-template/actions/workflows/performance.yaml">
+  <img src="https://github.com/yocheco/webpack-template/actions/workflows/performance.yaml/badge.svg" />
+</a>
 
 ## Getting Started
 
