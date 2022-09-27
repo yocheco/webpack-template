@@ -13,6 +13,9 @@ module.exports = {
         "unminified-css": "warn",
         "third-party-facades": "warn",
         "offscreen-images": "warn",
+        "image-size-responsive": "warn",
+        "render-blocking-resources": "warn",
+        "unsized-images": "warn",
         // Not performance related
         "tap-targets": "off",
         "non-composited-animations": "off",
