@@ -15,12 +15,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install && npm install -g @lhci/cli@0.8.x
-        working-directory: ${{env.working-directory}}
 
       - name: Build app
         run: npm run build
-        working-directory: ${{env.working-directory}}
 
       - name: Run lighthouse
         run: lhci autorun
-        working-directory: ${{env.working-directory}}
