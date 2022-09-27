@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{>partials/favicon}}
+  {{>partials/seo}}
   {{>partials/seo-social}}
   <title>Template | Webpack</title>
   <style>
@@ -28,8 +29,8 @@
   <section class="section">
     <div class="container">
       {{>partials/logo}}
-      <hr>
     </div>
+    <hr>
   </section>
 
   {{!-- [H] --}}
@@ -38,8 +39,8 @@
       <h1>Title h1</h1>
       <h2>Title h2</h2>
       <h3>Title h3</h3>
-      <hr>
     </div>
+    <hr>
   </section>
 
   {{!-- Text --}}
@@ -51,30 +52,54 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tenetur, commodi consectetur temporibus neque inventore voluptates dolorum rem molestias, nesciunt dolores ut eius minus corporis ipsa cumque necessitatibus molestiae.
       </p>
-      <hr>
     </div>
+    <hr>
   </section>
 
   {{!-- Form --}}
   <section class="section">
     <div class="container">
-      <input type="text" value="im a text">
-      <input type="password" value="im a password">
-      <input type="search" value="im a search">
-      <input type="tel" value="im a tel">
-      <input type="time" value="im a time">
-      <input type="url" value="im a url">
-      <input type="week" value="im a week">
-      <input type="date" >
-      <input type="color">
-      <input type="checkbox">
-      <input type="radio">
-      <input type="range">
-      <input type="reset">
-      <input type="submit">
-      <textarea name=""></textarea>
-      <hr>
+      <label for="text">Text</label>
+      <input type="text" id="text" value="im a text">
+      
+      <label for="password">password</label>
+      <input type="password" id="password" value="im a password">
+
+      <label for="search">search</label>
+      <input type="search" id="search" value="im a search">
+
+      <label for="tel">tel</label>
+      <input type="tel" id="tel" value="im a tel">
+
+      <label for="time">time</label>
+      <input type="time" id="time" value="im a time">
+
+      <label for="url">url</label>
+      <input type="url" id="url" value="im a url">
+
+      <label for="week">week</label>
+      <input type="week" id="week" value="im a week">
+      
+      <label for="date">date</label>
+      <input type="date" id="date" >
+
+
+      <label for="color">color</label>
+      <input type="color" id="color">
+
+      <label for="checkbox">checkbox</label>
+      <input type="checkbox" id="checkbox">
+
+      <label for="radio">radio</label>
+      <input type="radio" id="radio">
+
+      <label for="range">range</label>
+      <input type="range" id="range">
+
+      <label for="textarea">textarea</label>
+      <textarea name="textarea" id="textarea"></textarea>
     </div>
+    <hr>
   </section>
 
   {{!-- Buttoms --}}
@@ -82,8 +107,8 @@
     <div class="container">
       <a href="#">Link</a>
       <button>Buttom</button>
-      <hr>
     </div>
+    <hr>
   </section>
 
   {{!-- Icons --}}
@@ -93,6 +118,19 @@
       <i class="fa-brands fa-github"></i>
       <i class="fa-brands fa-docker"></i>
     </div>
+    <hr>
+  </section>
+
+  {{!-- video --}}
+  <section class="section">
+    <div class="container">
+      <p>Add "js-video-player" class to video</p>
+      <video class="js-video-player" width="463" muted loop controls>
+        <source data-src="/assets/video/video.mp4" type="video/mp4" />
+        Sorry, your browser does not support embedded videos.
+      </video>
+    </div>
+    <hr>
   </section>
 </body>
 </html>
