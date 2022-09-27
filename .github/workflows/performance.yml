@@ -4,9 +4,6 @@ jobs:
   lighthouseci:
     runs-on: ubuntu-latest
 
-    env:
-      working-directory: ./22-lighthouse
-
     steps:
       - uses: actions/checkout@v2
 
@@ -14,7 +11,7 @@ jobs:
         with:
           node-version: 14
           cache: 'npm'
-          cache-dependency-path: ./22-lighthouse/package-lock.json
+          cache-dependency-path: ./package-lock.json
 
       - name: Install Dependencies
         run: npm install && npm install -g @lhci/cli@0.8.x
