@@ -13,7 +13,10 @@ const playObserver = new IntersectionObserver(
       video.pause();
     });
   },
-  { threshold: 0.75 }
+  { 
+    threshold: 0.75,
+     rootMargin: '-100px 0px 0px 0px',
+  }
 );
 
 const loadObserver = new IntersectionObserver(
