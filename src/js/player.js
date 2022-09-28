@@ -42,4 +42,6 @@ const loadObserver = new IntersectionObserver(
 
 const videos = document.querySelectorAll('.js-video-player')
 
-if(videos) videos.forEach(video =>loadObserver.observe(video))
+export function playerStart(){
+  if(videos) videos.forEach(video => loadObserver.observe(video))
+}

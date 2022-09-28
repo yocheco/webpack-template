@@ -1,8 +1,8 @@
-const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 
+const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   mode: "production",
@@ -12,6 +12,8 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
     }),
+    // [Analyzer]
+    new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [
