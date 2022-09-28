@@ -13,7 +13,7 @@ module.exports = merge(common, {
       filename: 'css/main.css',
     }),
     // [Analyzer]
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [
